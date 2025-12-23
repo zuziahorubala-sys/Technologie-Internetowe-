@@ -1,0 +1,26 @@
+### Health
+GET http://localhost:3000/api/health
+
+### Lista postów
+GET http://localhost:3000/api/posts
+
+### Dodaj post
+POST http://localhost:3000/api/posts
+Content-Type: application/json
+
+{ "title": "Nowy post", "body": "Treść nowego posta" }
+
+### Zatwierdzone komentarze posta (tylko approved=1)
+GET http://localhost:3000/api/posts/1/comments
+
+### Dodaj komentarz (trafia do moderacji, approved=0)
+POST http://localhost:3000/api/posts/1/comments
+Content-Type: application/json
+
+{ "author": "Zuzanna", "body": "To jest komentarz do zatwierdzenia." }
+
+### Panel moderacji (pomocnicze)
+GET http://localhost:3000/api/comments/pending
+
+### Zatwierdź komentarz
+POST http://localhost:3000/api/comments/1/approve

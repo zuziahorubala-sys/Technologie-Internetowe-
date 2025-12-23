@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Blog — Post</title>
+  <style>
+    body { font-family: system-ui, Segoe UI, Arial, sans-serif; line-height: 1.5; margin: 16px; }
+    nav a { margin-right: 12px; }
+    .box { border: 1px solid #ddd; padding: 10px; border-radius: 8px; }
+    textarea, input { width: 100%; padding: 8px; }
+    button { padding: 8px 12px; }
+    .muted { color:#666; }
+    .comment { border-top:1px solid #eee; padding: 8px 0; }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/">Posty</a>
+    <a href="/moderation.html">Moderacja</a>
+  </nav>
+
+  <h1 id="post-title">Post</h1>
+  <div class="box">
+    <div class="muted" id="post-meta"></div>
+    <p id="post-body"></p>
+  </div>
+
+  <h2>Komentarze (tylko zatwierdzone)</h2>
+  <div id="comments" class="box"></div>
+
+  <h2>Dodaj komentarz</h2>
+  <form id="add-comment-form">
+    <div>
+      <label>Autor</label>
+      <input id="author" required maxlength="100" />
+    </div>
+    <div>
+      <label>Komentarz</label>
+      <textarea id="comment-body" required maxlength="1000" rows="4"></textarea>
+    </div>
+    <button>Dodaj (trafi do moderacji)</button>
+    <div class="muted" id="comment-result"></div>
+  </form>
+
+  <script src="/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+### Health
+GET http://localhost:3000/api/health
+
+### Ranking
+GET http://localhost:3000/api/movies
+
+### Bonus: year + limit
+GET http://localhost:3000/api/movies?year=2014&limit=5
+
+### Bonus top
+GET http://localhost:3000/api/movies/top?limit=5&year=2014
+
+### Dodaj film
+POST http://localhost:3000/api/movies
+Content-Type: application/json
+
+{ "title": "Nowy film", "year": 2024 }
+
+### Dodaj ocenę
+POST http://localhost:3000/api/ratings
+Content-Type: application/json
+
+{ "movie_id": 1, "score": 5 }

@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Notatki</title>
+  <style>
+    body { font-family: system-ui, Segoe UI, Arial, sans-serif; margin: 16px; }
+    h1 { margin: 0 0 12px; }
+    .row { display:flex; gap: 12px; flex-wrap: wrap; }
+    .card { border: 1px solid #ddd; border-radius: 12px; padding: 10px; background:#fafafa; }
+    .grow { flex: 1; min-width: 320px; }
+    input, textarea, select { width: 100%; padding: 8px; margin-top: 6px; box-sizing: border-box; }
+    button { padding: 8px 12px; margin-top: 8px; }
+    .note { border: 1px solid #ddd; border-radius: 12px; padding: 10px; margin: 10px 0; }
+    .meta { color:#666; font-size: 12px; }
+    .tags { display:flex; gap: 6px; flex-wrap: wrap; margin-top: 6px; }
+    .tag { font-size: 12px; border: 1px solid #ddd; border-radius: 999px; padding: 2px 8px; background:#fff; }
+    mark { padding: 0 2px; }
+  </style>
+</head>
+<body>
+  <h1>Notatki</h1>
+
+  <div class="row">
+    <div class="card grow">
+      <h2>Szukaj</h2>
+      <label>Fraza (q)</label>
+      <input id="q" placeholder="Szukaj w tytule lub treści..." />
+      <label>Tag (opcjonalnie)</label>
+      <select id="tag">
+        <option value="">— wszystkie —</option>
+      </select>
+      <div class="row" style="margin-top:8px;">
+        <button id="btnSearch" type="button">Szukaj</button>
+        <button id="btnClear" type="button">Wyczyść</button>
+      </div>
+      <div class="meta" id="count"></div>
+    </div>
+
+    <div class="card grow">
+      <h2>Dodaj notatkę</h2>
+      <form id="addNote">
+        <label>Tytuł</label>
+        <input name="title" maxlength="200" required />
+        <label>Treść</label>
+        <textarea name="body" rows="5" maxlength="5000" required></textarea>
+        <label>Tagi (oddzielone przecinkami)</label>
+        <input name="tags" placeholder="np. work, home" />
+        <button type="submit">Dodaj</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Dodaj tagi do istniejącej notatki</h2>
+    <form id="addTags">
+      <div class="row">
+        <div class="grow">
+          <label>ID notatki</label>
+          <input name="id" type="number" min="1" required />
+        </div>
+        <div class="grow">
+          <label>Tagi (comma‑sep)</label>
+          <input name="tags" required placeholder="np. uczelnia, todo" />
+        </div>
+      </div>
+      <button type="submit">Dopisz tagi</button>
+    </form>
+    <div class="meta" id="tagResult"></div>
+  </div>
+
+  <h2>Wyniki</h2>
+  <div id="list"></div>
+
+  <script src="/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Wypożyczalnia — Wypożyczenia</title>
+</head>
+<body>
+  <nav>
+    <a href="/">Książki</a> | <a href="/members.html">Członkowie</a> | <a href="/loans.html">Wypożyczenia</a>
+  </nav>
+  <h1>Wypożyczenia</h1>
+  <table border="1" cellpadding="6" cellspacing="0">
+    <thead>
+      <tr>
+        <th>Id</th><th>Członek</th><th>Książka</th><th>Data wypożyczenia</th><th>Termin</th><th>Zwrócono</th><th>Akcje</th>
+      </tr>
+    </thead>
+    <tbody id="loans-body"></tbody>
+  </table>
+
+  <script src="/app.js"></script>
+</body>
+</html>

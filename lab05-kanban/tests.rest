@@ -1,0 +1,23 @@
+### Health
+GET http://localhost:3000/api/health
+
+### Board
+GET http://localhost:3000/api/board
+
+### Dodaj zadanie (na koniec kolumny)
+POST http://localhost:3000/api/tasks
+Content-Type: application/json
+
+{ "title": "Nowe zadanie", "col_id": 1 }
+
+### Przenieś zadanie (zmiana kolumny + ord)
+POST http://localhost:3000/api/tasks/1/move
+Content-Type: application/json
+
+{ "col_id": 2, "ord": 1 }
+
+### Przenieś w obrębie tej samej kolumny (zmiana ord)
+POST http://localhost:3000/api/tasks/2/move
+Content-Type: application/json
+
+{ "col_id": 1, "ord": 1 }

@@ -1,0 +1,17 @@
+{
+  "name": "lab02-shop",
+  "version": "1.0.0",
+  "description": "Lab02 — Sklep: koszyk i zamówienia (Express + SQLite)",
+  "type": "module",
+  "scripts": {
+    "dev": "node ./src/server.js",
+    "reset:db": "node ./scripts/resetDb.js"
+  },
+  "dependencies": {
+    "better-sqlite3": "^9.6.0",
+    "express": "^4.21.1",
+    "helmet": "^7.1.0",
+    "morgan": "^1.10.0",
+    "zod": "^3.23.8"
+  }
+}

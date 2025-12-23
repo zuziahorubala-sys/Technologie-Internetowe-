@@ -1,0 +1,29 @@
+### Health
+GET http://localhost:3000/api/health
+
+### Lista tagów
+GET http://localhost:3000/api/tags
+
+### Lista notatek (bez filtrów)
+GET http://localhost:3000/api/notes
+
+### Szukanie frazy (LIKE)
+GET http://localhost:3000/api/notes?q=lista
+
+### Filtr po tagu
+GET http://localhost:3000/api/notes?tag=uczelnia
+
+### Szukanie + tag
+GET http://localhost:3000/api/notes?q=notatnik&tag=uczelnia
+
+### Dodaj notatkę
+POST http://localhost:3000/api/notes
+Content-Type: application/json
+
+{ "title": "Nowa notatka", "body": "To jest treść notatki o pracy i domu." }
+
+### Dodaj tagi do notatki
+POST http://localhost:3000/api/notes/4/tags
+Content-Type: application/json
+
+{ "tags": ["work", "home", "work"] }

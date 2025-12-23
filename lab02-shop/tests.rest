@@ -1,0 +1,35 @@
+### Health
+GET http://localhost:3000/api/health
+
+### Lista produktów
+GET http://localhost:3000/api/products
+
+### Dodaj produkt
+POST http://localhost:3000/api/products
+Content-Type: application/json
+
+{ "name": "Pendrive", "price": 29.99 }
+
+### Koszyk (pusty / zawartość)
+GET http://localhost:3000/api/cart
+
+### Dodaj do koszyka
+POST http://localhost:3000/api/cart/add
+Content-Type: application/json
+
+{ "product_id": 1, "qty": 2 }
+
+### Zmień ilość w koszyku
+PATCH http://localhost:3000/api/cart/item
+Content-Type: application/json
+
+{ "product_id": 1, "qty": 3 }
+
+### Usuń z koszyka
+DELETE http://localhost:3000/api/cart/item/1
+
+### Checkout (zamów)
+POST http://localhost:3000/api/checkout
+
+### Historia zamówień (bonus)
+GET http://localhost:3000/api/orders

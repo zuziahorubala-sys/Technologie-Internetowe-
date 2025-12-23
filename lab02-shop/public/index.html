@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sklep — Koszyk i zamówienia</title>
+  <style>
+    body { font-family: system-ui, Segoe UI, Arial, sans-serif; line-height: 1.5; margin: 16px; }
+    h1 { margin-top: 0; }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: start; }
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #ccc; padding: 6px 8px; }
+    input { padding: 6px; }
+    button { padding: 6px 10px; }
+    .muted { color: #666; }
+    .row { display:flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+  </style>
+</head>
+<body>
+  <h1>Sklep</h1>
+
+  <div class="grid">
+    <section>
+      <h2>Produkty</h2>
+      <div class="muted">Kliknij „Dodaj” aby dodać produkt do koszyka.</div>
+      <table>
+        <thead>
+          <tr><th>ID</th><th>Nazwa</th><th>Cena</th><th>Akcja</th></tr>
+        </thead>
+        <tbody id="products-body"></tbody>
+      </table>
+
+      <h3>Dodaj produkt (CRUD: Create)</h3>
+      <form id="add-product-form" class="row">
+        <label>Nazwa <input id="p_name" required /></label>
+        <label>Cena <input id="p_price" type="number" min="0" step="0.01" value="0" required /></label>
+        <button>Dodaj produkt</button>
+      </form>
+    </section>
+
+    <section>
+      <h2>Koszyk</h2>
+      <table>
+        <thead>
+          <tr><th>ID</th><th>Produkt</th><th>Cena</th><th>Ilość</th><th>Suma</th><th>Akcje</th></tr>
+        </thead>
+        <tbody id="cart-body"></tbody>
+        <tfoot>
+          <tr><td colspan="4" style="text-align:right"><strong>Razem:</strong></td><td colspan="2"><strong id="cart-total">0.00</strong></td></tr>
+        </tfoot>
+      </table>
+
+      <div class="row" style="margin-top: 12px;">
+        <button id="checkout">Zamów</button>
+        <span id="checkout-result" class="muted"></span>
+      </div>
+
+      <h3>Historia zamówień (bonus)</h3>
+      <button id="load-orders">Pokaż historię</button>
+      <div id="orders" class="muted"></div>
+    </section>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>

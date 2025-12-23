@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Filmy i oceny</title>
+  <style>
+    body { font-family: system-ui, Segoe UI, Arial, sans-serif; line-height: 1.5; margin: 16px; }
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #ccc; padding: 6px 8px; }
+    input, select { padding: 6px; }
+    button { padding: 6px 10px; }
+    .row { display:flex; gap:16px; flex-wrap: wrap; align-items: end; }
+    .card { border:1px solid #ddd; padding:12px; border-radius: 10px; margin-top: 14px; }
+    .muted { color:#666; }
+  </style>
+</head>
+<body>
+  <h1>Filmy — ranking</h1>
+  <p class="muted">Średnia i liczba głosów są liczone zapytaniem (bez restartu).</p>
+
+  <div class="card">
+    <h2>Filtry (bonus)</h2>
+    <div class="row">
+      <div>
+        <label>Rok</label><br/>
+        <input id="filter-year" type="number" min="1888" max="2100" placeholder="np. 2014" />
+      </div>
+      <div>
+        <label>Limit</label><br/>
+        <input id="filter-limit" type="number" min="1" max="200" placeholder="np. 5" />
+      </div>
+      <div>
+        <button id="apply-filters" type="button">Zastosuj</button>
+        <button id="clear-filters" type="button">Wyczyść</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Lista filmów</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th><th>Tytuł</th><th>Rok</th><th>Średnia</th><th>Głosy</th>
+        </tr>
+      </thead>
+      <tbody id="movies-body"></tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>Dodaj ocenę</h2>
+    <form id="rate-form" class="row">
+      <div>
+        <label>Film</label><br/>
+        <select id="movie_id"></select>
+      </div>
+      <div>
+        <label>Ocena (1–5)</label><br/>
+        <input id="score" type="number" min="1" max="5" value="5" required />
+      </div>
+      <div>
+        <button type="submit">Dodaj ocenę</button>
+      </div>
+      <div class="muted" id="rate-result"></div>
+    </form>
+  </div>
+
+  <div class="card">
+    <h2>Dodaj film</h2>
+    <form id="add-movie-form" class="row">
+      <div>
+        <label>Tytuł</label><br/>
+        <input id="title" maxlength="200" required />
+      </div>
+      <div>
+        <label>Rok</label><br/>
+        <input id="year" type="number" min="1888" max="2100" required />
+      </div>
+      <div>
+        <button type="submit">Dodaj film</button>
+      </div>
+      <div class="muted" id="movie-result"></div>
+    </form>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>

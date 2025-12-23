@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Blog — Posty</title>
+  <style>
+    body { font-family: system-ui, Segoe UI, Arial, sans-serif; line-height: 1.5; margin: 16px; }
+    nav a { margin-right: 12px; }
+    .post { border: 1px solid #ddd; padding: 10px; margin: 10px 0; border-radius: 8px; }
+    textarea, input { width: 100%; padding: 8px; }
+    button { padding: 8px 12px; }
+    .muted { color:#666; }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/">Posty</a>
+    <a href="/moderation.html">Moderacja</a>
+  </nav>
+
+  <h1>Lista postów</h1>
+  <div id="posts"></div>
+
+  <h2>Dodaj post</h2>
+  <form id="add-post-form">
+    <div>
+      <label>Tytuł</label>
+      <input id="title" required maxlength="200" />
+    </div>
+    <div>
+      <label>Treść</label>
+      <textarea id="body" required maxlength="20000" rows="6"></textarea>
+    </div>
+    <button>Dodaj</button>
+  </form>
+
+  <script src="/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kanban</title>
+  <style>
+    body { font-family: system-ui, Segoe UI, Arial, sans-serif; margin: 16px; }
+    h1 { margin: 0 0 12px; }
+    .board { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; align-items: start; }
+    .col { border: 1px solid #ddd; border-radius: 12px; padding: 10px; background: #fafafa; }
+    .col h2 { margin: 0 0 10px; font-size: 18px; }
+    .card { border: 1px solid #ccc; border-radius: 10px; background: white; padding: 8px; margin: 8px 0; display:flex; gap: 8px; align-items: center; justify-content: space-between; }
+    .title { flex: 1; }
+    .muted { color: #666; font-size: 12px; }
+    form { display:flex; gap: 8px; margin-top: 10px; }
+    input { flex: 1; padding: 6px; }
+    button { padding: 6px 10px; }
+    .actions { display:flex; gap: 6px; align-items: center; }
+    .pill { font-size: 12px; padding: 2px 8px; border-radius: 999px; border: 1px solid #ddd; background: #fff; }
+  </style>
+</head>
+<body>
+  <h1>Kanban</h1>
+  <div class="muted">Przenoszenie zgodnie z regułami ord. Przycisk „→” przenosi kartę do kolumny po prawej (na koniec).</div>
+
+  <div id="board" class="board"></div>
+
+  <script src="/app.js"></script>
+</body>
+</html>

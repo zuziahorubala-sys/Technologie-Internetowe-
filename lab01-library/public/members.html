@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Wypożyczalnia — Członkowie</title>
+</head>
+<body>
+  <nav>
+    <a href="/">Książki</a> | <a href="/members.html">Członkowie</a> | <a href="/loans.html">Wypożyczenia</a>
+  </nav>
+  <h1>Członkowie</h1>
+  <ul id="members"></ul>
+
+  <h2>Dodaj członka</h2>
+  <form id="member-form">
+    <label>Imię i nazwisko <input id="name" required /></label>
+    <label>Email <input id="email" type="email" required /></label>
+    <button>Dodaj</button>
+  </form>
+
+  <script src="/app.js"></script>
+</body>
+</html>

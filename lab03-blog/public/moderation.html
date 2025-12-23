@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Blog — Moderacja</title>
+  <style>
+    body { font-family: system-ui, Segoe UI, Arial, sans-serif; line-height: 1.5; margin: 16px; }
+    nav a { margin-right: 12px; }
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #ccc; padding: 6px 8px; vertical-align: top; }
+    button { padding: 6px 10px; }
+    .muted { color:#666; }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/">Posty</a>
+    <a href="/moderation.html">Moderacja</a>
+  </nav>
+
+  <h1>Moderacja komentarzy</h1>
+  <p class="muted">Widoczne są komentarze oczekujące (approved = 0).</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th><th>Post</th><th>Autor</th><th>Komentarz</th><th>Utworzono</th><th>Akcja</th>
+      </tr>
+    </thead>
+    <tbody id="pending"></tbody>
+  </table>
+
+  <script src="/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+import helmet from 'helmet';
+
+export const security = helmet({
+  contentSecurityPolicy: {
+    useDefaults: true,
+    directives: {
+      "default-src": ["'self'"],
+      "script-src": ["'self'"],
+      "style-src": ["'self'", "'unsafe-inline'"]
+    }
+  },
+  referrerPolicy: { policy: 'no-referrer' },
+  xContentTypeOptions: true
+});

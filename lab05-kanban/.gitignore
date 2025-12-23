@@ -1,0 +1,4 @@
+node_modules
+kanban.db
+*.log
+.DS_Store
